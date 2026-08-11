@@ -409,6 +409,19 @@ project-track article>ul,
     max-width: 68rem;
 }
 
+#ai-automation-tracks,
+#robotics-tracks,
+#coursework-tracks {
+    display: grid;
+    gap: 5rem;
+}
+
+#ai-automation-tracks h2,
+#robotics-tracks h2,
+#coursework-tracks h2 {
+    margin-bottom: 0;
+}
+
 .track-detail {
     margin-top: 1.6rem;
     padding-top: 1.1rem;
