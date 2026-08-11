@@ -353,6 +353,47 @@ hello-world {
     margin-bottom: 0;
 }
 
+.playlist-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.playlist-links a {
+    display: grid;
+    gap: 0.7rem;
+    min-height: 9rem;
+    padding: 1.25rem;
+    border-top: 1px solid var(--line);
+    background:
+        linear-gradient(180deg, rgba(24, 168, 255, 0.06), rgba(255, 35, 56, 0.08)),
+        rgba(255, 255, 255, 0.025);
+    text-decoration: none;
+    transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.playlist-links a:hover {
+    transform: translateY(-0.25rem);
+    border-color: var(--blue);
+    background-color: rgba(24, 168, 255, 0.045);
+}
+
+.playlist-links span {
+    color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.playlist-links small {
+    color: var(--muted);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
 project-track {
     display: block;
     min-width: 0;
@@ -523,6 +564,10 @@ footer p {
 
     #playlists project-track article {
         min-height: auto;
+    }
+
+    .playlist-links {
+        grid-template-columns: 1fr;
     }
 
     project-track article {
