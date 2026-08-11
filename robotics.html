@@ -43,38 +43,85 @@
                 <article>
                     <h3>TritonDroids MiniAloha Robot</h3>
 
-                    <p>
-                        <strong>Problem:</strong> MiniAloha is a small robot project under TritonDroids.
-                        The goal is to get the robot's hardware and software working together so it can move
-                        reliably and support future features like SLAM and robot arms.
+                    <p class="track-summary">
+                        A robotics project where I assembled the MiniAloha robot, brought up its control stack,
+                        calibrated its leader-follower arms, and built a browser-based interface for remote operation.
                     </p>
 
-                    <p>
-                        <strong>Contribution:</strong> I set up the Raspberry Pi, helped configure the robot,
-                        and got the motors working. At this stage, the base robot is able to run, while SLAM
-                        and the robot arms are being handled by another team member.
-                    </p>
+                    <section class="track-detail">
+                        <h4>Problem</h4>
+                        <p>
+                            MiniAloha needed to move from a hardware build into a usable robot platform.
+                            Before the team could focus on higher-level autonomy work like simulation and SLAM,
+                            the base robot, arm setup, remote access, and browser control interface needed to work
+                            reliably.
+                        </p>
+                    </section>
 
-                    <p>
-                        <strong>Tools:</strong> Raspberry Pi, motor setup, robotics hardware, software control,
-                        debugging, testing, team communication, and documentation.
-                    </p>
+                    <section class="track-detail">
+                        <h4>What I Worked On</h4>
 
-                    <p>
-                        <strong>Constraints:</strong> Debugging took patience because issues could come from the
-                        Pi setup, motor wiring, configuration, software, or the physical robot itself.
-                    </p>
+                        <p>
+                            I worked across the physical robot, remote access setup, and browser-based control
+                            interface.
+                            My main contributions included:
+                        </p>
 
-                    <p>
-                        <strong>Status:</strong> The base robot is working. Remaining work includes SLAM and the
-                        robot arms, which are part of the larger team build.
-                    </p>
+                        <ul>
+                            <li>Assembled the MiniAloha robot and installed the motors on the robot base.</li>
+                            <li>Set up and calibrated the leader and follower arms for teleoperation experiments.</li>
+                            <li>Configured the Raspberry Pi for remote access and control using Tailscale.</li>
+                            <li>Updated the robot control UI so it could be used more easily from the browser.</li>
+                            <li>Used FastAPI to serve the control interface and connect the browser UI to the robot
+                                setup.</li>
+                        </ul>
+                    </section>
 
-                    <p>
-                        <strong>What I learned:</strong> Robotics debugging is different from normal software
-                        debugging because the problem is not always in the code. I had to check the setup,
-                        hardware, and software together before deciding what was wrong.
-                    </p>
+                    <section class="track-detail">
+                        <h4>My Role</h4>
+                        <p>
+                            I worked across the hardware, networking, and software layers of the robot.
+                            My focus was making the robot easier to operate: assembling the base, installing motors,
+                            calibrating the arms, setting up remote access, and improving the control UI.
+                        </p>
+                    </section>
+
+                    <section class="track-detail">
+                        <h4>Tools</h4>
+                        <p>
+                            Python, FastAPI, Raspberry Pi, Tailscale, browser-based UI development, motor installation,
+                            arm calibration, robot assembly, remote debugging, and team documentation.
+                        </p>
+                    </section>
+
+                    <section class="track-detail">
+                        <h4>Challenge</h4>
+                        <p>
+                            The main challenge was connecting several layers that all had to work together:
+                            physical assembly, motor behavior, arm calibration, network access, and the control
+                            interface.
+                            A problem could come from hardware, configuration, networking, or software, so debugging
+                            required checking the whole system instead of only one part.
+                        </p>
+                    </section>
+
+                    <section class="track-detail">
+                        <h4>Current Focus</h4>
+                        <p>
+                            The current work is focused on running simulations and implementing SLAM so the robot
+                            can move beyond manual control toward more autonomous behavior.
+                        </p>
+                    </section>
+
+                    <section class="track-detail">
+                        <h4>What I Learned</h4>
+                        <p>
+                            This project taught me how much robotics depends on system integration.
+                            A robot is not just code or hardware by itself; it needs reliable physical setup,
+                            communication, controls, calibration, and usable interfaces before higher-level autonomy
+                            work can really begin.
+                        </p>
+                    </section>
                 </article>
             </project-track>
         </section>
