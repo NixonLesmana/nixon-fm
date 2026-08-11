@@ -402,6 +402,30 @@ project-track strong {
     color: var(--ink);
 }
 
+project-track article>p,
+project-track article>ul,
+.track-summary,
+.track-detail {
+    max-width: 68rem;
+}
+
+.track-detail {
+    margin-top: 1.6rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.track-detail::before {
+    content: none;
+}
+
+.track-detail h4 {
+    margin: 0 0 1rem;
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+}
+
 #library {
     max-width: 680px;
 }
