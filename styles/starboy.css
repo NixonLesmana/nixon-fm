@@ -321,9 +321,47 @@ hello-world {
     grid-column: 1 / -1;
 }
 
+#playlists {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    align-items: stretch;
+}
+
+#playlists h2 {
+    grid-column: 1 / -1;
+}
+
+#playlists project-track {
+    height: 100%;
+}
+
+#playlists project-track article {
+    min-height: 32rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#playlists project-track article::before {
+    flex: 0 0 auto;
+    margin-bottom: 2.5rem;
+}
+
+#playlists project-track p:last-child {
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
 project-track {
     display: block;
     min-width: 0;
+}
+
+project-track h3 {
+    color: var(--ink);
+    font-weight: 600;
+    text-shadow: 0 0 14px rgba(255, 35, 56, 0.35);
 }
 
 project-track article {
@@ -358,6 +396,10 @@ project-track article:hover {
 project-track article:hover::before {
     border-color: var(--blue);
     box-shadow: var(--blue-glow);
+}
+
+project-track strong {
+    color: var(--ink);
 }
 
 #library {
@@ -434,11 +476,16 @@ footer p {
         margin-left: 0;
     }
 
-    #featured {
+    #featured,
+    #playlists {
         grid-template-columns: 1fr;
         width: 100%;
         max-width: 100%;
         overflow-x: visible;
+    }
+
+    #playlists project-track article {
+        min-height: auto;
     }
 
     project-track article {
