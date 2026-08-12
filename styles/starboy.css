@@ -602,8 +602,45 @@ footer {
 }
 
 footer p {
-    margin-bottom: 0;
+    margin-bottom: 0.8rem;
     color: var(--dim);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-links a {
+    display: inline-grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 180ms ease, transform 180ms ease, filter 180ms ease;
+}
+
+.social-links a:hover {
+    color: var(--blue);
+    transform: translateY(-0.15rem);
+    filter: drop-shadow(0 0 10px rgba(24, 168, 255, 0.55));
+}
+
+.social-links svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.social-links a[aria-label="GitHub"] svg {
+    fill: currentColor;
+    stroke: none;
 }
 
 :focus-visible {
