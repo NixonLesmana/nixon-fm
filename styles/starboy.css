@@ -122,9 +122,9 @@ nav {
 nav ul {
     display: flex;
     flex-direction: column;
-    gap: 1.1rem;
+    gap: 1.3rem;
     margin: 0;
-    padding: 0;
+    padding: 0.5rem 0;
     list-style: none;
 }
 
@@ -132,7 +132,7 @@ nav a {
     display: inline-block;
     color: var(--muted);
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 0.76rem;
+    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.2em;
     text-decoration: none;
