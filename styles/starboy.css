@@ -1,4 +1,5 @@
 :root {
+    color-scheme: light dark;
     --bg: #030304;
     --ink: #f4f0f2;
     --muted: #aaa0a6;
@@ -8,15 +9,61 @@
     --line: rgba(255, 255, 255, 0.16);
     --red-glow: 0 0 12px rgba(255, 35, 56, 0.9), 0 0 36px rgba(255, 35, 56, 0.45);
     --blue-glow: 0 0 18px rgba(24, 168, 255, 0.8), 0 0 42px rgba(24, 168, 255, 0.35);
+    --bg-blue-haze: rgba(24, 168, 255, 0.13);
+    --bg-red-haze: rgba(255, 35, 56, 0.15);
+    --grain-line-a: rgba(255, 255, 255, 0.04);
+    --grain-line-b: rgba(255, 255, 255, 0.03);
+    --side-wash: rgba(255, 35, 56, 0.08);
+    --bottom-wash: rgba(0, 0, 0, 0.82);
     --max: 1120px;
+}
+
+:root[data-theme="light"] {
+    color-scheme: light;
+    --bg: #faf7f2;
+    --ink: #161315;
+    --muted: #5f565c;
+    --dim: #7d7479;
+    --red: #b81224;
+    --blue: #056ba8;
+    --line: rgba(0, 0, 0, 0.16);
+    --red-glow: 0 0 10px rgba(184, 18, 36, 0.28);
+    --blue-glow: 0 0 12px rgba(5, 107, 168, 0.24);
+    --bg-blue-haze: rgba(5, 107, 168, 0.08);
+    --bg-red-haze: rgba(184, 18, 36, 0.08);
+    --grain-line-a: rgba(0, 0, 0, 0.035);
+    --grain-line-b: rgba(0, 0, 0, 0.025);
+    --side-wash: rgba(184, 18, 36, 0.04);
+    --bottom-wash: rgba(255, 255, 255, 0.35);
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+:root[data-theme="light"] header::before {
+    opacity: 0.5;
+    filter: blur(28px);
+}
+
+:root[data-theme="light"] header::after {
+    opacity: 0.68;
+    filter: drop-shadow(0 0 16px rgba(184, 18, 36, 0.42));
+}
+
+:root[data-theme="light"] project-track article,
+:root[data-theme="light"] .experience-card,
+:root[data-theme="light"] .profile-player,
+:root[data-theme="light"] .playlist-links a,
+:root[data-theme="light"] .skill-grid article {
+    border-top-color: var(--line);
+    background:
+        linear-gradient(180deg, transparent, rgba(184, 18, 36, 0.1)),
+        rgba(255, 255, 255, 0.025);
 }
 
 * {
     box-sizing: border-box;
-}
-
-html {
-    color-scheme: dark;
 }
 
 body {
@@ -24,8 +71,8 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     background:
-        radial-gradient(circle at 78% 18%, rgba(24, 168, 255, 0.13), transparent 18rem),
-        radial-gradient(circle at 18% 76%, rgba(255, 35, 56, 0.15), transparent 22rem),
+        radial-gradient(circle at 78% 18%, var(--bg-blue-haze), transparent 18rem),
+        radial-gradient(circle at 18% 76%, var(--bg-red-haze), transparent 22rem),
         var(--bg);
     color: var(--ink);
     font-family: Georgia, "Times New Roman", serif;
@@ -41,8 +88,8 @@ body::before {
     pointer-events: none;
     opacity: 0.22;
     background-image:
-        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(90deg, var(--grain-line-a) 1px, transparent 1px),
+        linear-gradient(var(--grain-line-b) 1px, transparent 1px);
     background-size: 3px 3px;
 }
 
@@ -53,8 +100,8 @@ body::after {
     z-index: -1;
     pointer-events: none;
     background:
-        linear-gradient(90deg, rgba(255, 35, 56, 0.08), transparent 28%),
-        linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.82));
+        linear-gradient(90deg, var(--side-wash), transparent 28%),
+        linear-gradient(180deg, transparent, var(--bottom-wash));
 }
 
 header,
@@ -72,6 +119,7 @@ header {
     padding: 4rem 0 3rem;
 }
 
+header::before,
 header::after {
     content: "";
     width: 9rem;
@@ -79,11 +127,21 @@ header::after {
     position: absolute;
     top: 18%;
     right: 8%;
+    pointer-events: none;
     background:
         linear-gradient(var(--red), var(--red)) center / 14% 100% no-repeat,
         linear-gradient(var(--red), var(--red)) center / 100% 14% no-repeat;
-    filter: drop-shadow(0 0 18px rgba(255, 35, 56, 0.85));
+}
+
+header::before {
+    opacity: 0.55;
+    filter: blur(24px);
+    transform: scale(1.08);
+}
+
+header::after {
     opacity: 0.72;
+    filter: drop-shadow(0 0 18px rgba(255, 35, 56, 0.85));
 }
 
 h1,
@@ -389,8 +447,85 @@ button:hover {
     text-shadow: var(--red-glow);
 }
 
+.theme-control {
+    margin-top: 2rem;
+}
+
+.theme-control p {
+    margin-bottom: 0.75rem;
+    color: var(--dim);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.theme-picker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.theme-picker button {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.theme-picker button::before {
+    content: "";
+    width: 0.65rem;
+    height: 0.65rem;
+    position: absolute;
+    left: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid currentColor;
+    border-radius: 50%;
+}
+
+.theme-picker button[aria-pressed="true"] {
+    background: color-mix(in srgb, var(--red) 72%, black);
+    color: white;
+    box-shadow: 0 0 6px rgba(255, 35, 56, 0.28);
+    text-shadow: none;
+}
+
+.theme-picker button[aria-pressed="true"]::before {
+    background: currentColor;
+}
+
+.home-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 64rem;
+    margin-top: 2rem;
+}
+
+.home-controls .theme-control {
+    margin-top: 0;
+}
+
+.stage-control {
+    padding-left: 2rem;
+    border-left: 1px solid var(--line);
+}
+
+.stage-control p {
+    margin-bottom: 0.75rem;
+    color: var(--dim);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.theme-picker button,
 #stage-light-toggle {
-    margin-top: 2.5rem;
+    margin-top: 0;
 }
 
 body.stage-lights-on {
@@ -413,10 +548,6 @@ body.stage-lights-on #intro h2 {
         0 0 12px rgba(255, 255, 255, 0.85),
         0 0 28px rgba(255, 35, 56, 0.85),
         0 0 58px rgba(24, 168, 255, 0.35);
-}
-
-hello-world {
-    display: block;
 }
 
 #featured {
@@ -744,6 +875,7 @@ footer p {
         padding: 5rem 0 3rem;
     }
 
+    header::before,
     header::after {
         width: 4.5rem;
         height: 4.5rem;
@@ -786,6 +918,22 @@ footer p {
         margin-left: 0;
     }
 
+    .home-controls {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .home-controls .theme-control {
+        margin-top: 0;
+    }
+
+    .stage-control {
+        padding-left: 0;
+        padding-top: 1.5rem;
+        border-left: 0;
+        border-top: 1px solid var(--line);
+    }
+
     #featured,
     #playlists {
         grid-template-columns: 1fr;
@@ -804,6 +952,22 @@ footer p {
 
     project-track article {
         min-height: 15rem;
+    }
+
+    .skill-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-grid article {
+        width: 100%;
+    }
+
+    .skill-grid ul {
+        gap: 0.5rem;
+    }
+
+    .skill-grid li {
+        font-size: 0.85rem;
     }
 }
 

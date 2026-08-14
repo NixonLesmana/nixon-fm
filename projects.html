@@ -9,6 +9,7 @@
     <link rel="author" href="about.html">
     <link rel="stylesheet" href="styles/starboy.css">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <script src="scripts/starboy.js" defer></script>
 
 
 </head>
@@ -17,6 +18,16 @@
     <header>
         <h1>Nixon FM</h1>
         <p><strong>My engineering projects, organized like a music library.</strong></p>
+
+        <aside class="theme-control" aria-label="Theme selection">
+            <p>Theme</p>
+
+            <div class="theme-picker">
+                <button type="button" data-theme-option="light">Light</button>
+                <button type="button" data-theme-option="dark">Dark</button>
+                <button type="button" data-theme-option="system">System</button>
+            </div>
+        </aside>
 
         <nav aria-label="Main navigation">
             <ul>

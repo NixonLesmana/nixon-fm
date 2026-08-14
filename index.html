@@ -45,10 +45,23 @@
                 You can browse my work across <em>robotics</em>, <em>AI and automation</em>,
                 coursework, and professional experience.
             </p>
-            <button id="stage-light-toggle" type="button" aria-pressed="false">
-                Stage Lights
-            </button>
-            <hello-world></hello-world>
+
+            <aside class="home-controls" aria-label="Display controls">
+                <aside class="theme-control" aria-label="Theme selection">
+                    <p>Theme</p>
+
+                    <div class="theme-picker">
+                        <button type="button" data-theme-option="light">Light</button>
+                        <button type="button" data-theme-option="dark">Dark</button>
+                        <button type="button" data-theme-option="system">System</button>
+                    </div>
+                </aside>
+
+                <aside class="stage-control" aria-label="Visual effects">
+                    <p>Effects</p>
+                    <button type="button" id="stage-light-toggle">Stage Lights</button>
+                </aside>
+            </aside>
         </section>
 
         <section id="featured">
