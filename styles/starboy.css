@@ -115,8 +115,8 @@ header {
     position: relative;
     min-height: 58vh;
     display: grid;
-    align-content: center;
-    padding: 4rem 0 3rem;
+    align-content: start;
+    padding: 5rem 0 3rem;
 }
 
 header::before,
@@ -125,7 +125,7 @@ header::after {
     width: 9rem;
     height: 9rem;
     position: absolute;
-    top: 18%;
+    top: 5rem;
     right: 8%;
     pointer-events: none;
     background:
